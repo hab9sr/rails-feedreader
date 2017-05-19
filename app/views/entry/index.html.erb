@@ -1,0 +1,21 @@
+<h1>Rails FeedReader</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Feed</th>
+      <th>Published</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= link_to(entry.title, entry.url, target: '_blank') %></td>
+        <td><%= entry.feed.title %></td>
+        <td><%= entry.published %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
