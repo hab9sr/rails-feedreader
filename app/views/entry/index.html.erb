@@ -1,4 +1,15 @@
-<h1>Rails FeedReader</h1>
+<h1 class="center">Rails FeedReader</h1>
+
+<ul class="nav nav-pills nav-justified center" id="category-filter">
+  <li role="presentation">
+    <%= link_to("All", root_url, remote: true) %>
+  </li>
+  <% @categories.each do |category| %>
+    <li role="presentation">
+      <%= link_to(category.name, root_url(category: category.id), remote: true) %>
+    </li>
+  <% end %>
+</ul>
 
 <table class="table">
   <thead>
@@ -9,13 +20,7 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= link_to(entry.title, entry.url, target: '_blank') %></td>
-        <td><%= entry.feed.title %></td>
-        <td><%= entry.published %></td>
-      </tr>
-    <% end %>
+  <tbody id="entries-body">
+    <%= render 'rows' %>
   </tbody>
 </table>

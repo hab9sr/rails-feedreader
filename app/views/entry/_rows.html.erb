@@ -1,0 +1,7 @@
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= link_to(entry.title, entry.url, target: '_blank') %></td>
+    <td><%= entry.feed.title %></td>
+    <td><%= entry.published %></td>
+  </tr>
+<% end %>

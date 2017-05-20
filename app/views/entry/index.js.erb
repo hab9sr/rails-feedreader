@@ -1,0 +1,5 @@
+$("#entries-body").empty();
+
+$("#entries-body").html(
+  "<%= escape_javascript(render partial: 'rows', locals: { entries: @entries }) %>"
+);
