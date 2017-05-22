@@ -27,7 +27,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :url %>
+    <!-- if we're creating a Twitter feed, the label will say "Twitter handle"
+        otherwise it'll say "URL" -->
+    <%= f.label :url, "URL", id: "feed_url_label" %>
     <%= f.text_field :url %>
   </div>
 

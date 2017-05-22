@@ -26,6 +26,11 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feed_params)
 
+    if Category.find(@feed.category_id).name == 'Twitter'
+      username = @feed.url.remove('@')
+      @feed.url = 'https://twitrss.me/twitter_user_to_rss/?user=' + username
+    end
+
     respond_to do |format|
       if @feed.save
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }

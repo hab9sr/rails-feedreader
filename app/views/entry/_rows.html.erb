@@ -2,6 +2,6 @@
   <tr>
     <td><%= link_to(entry.title, entry.url, target: '_blank') %></td>
     <td><%= entry.feed.title %></td>
-    <td><%= entry.published %></td>
+    <td><%= entry.published.to_formatted_s(:long) %></td>
   </tr>
 <% end %>
