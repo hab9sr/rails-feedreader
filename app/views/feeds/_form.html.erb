@@ -33,6 +33,11 @@
     <%= f.text_field :url %>
   </div>
 
+  <div class="field">
+    <%= f.label :hide_in_all, "Hide from 'All' listing?" %>
+    <%= f.check_box :hide_in_all %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

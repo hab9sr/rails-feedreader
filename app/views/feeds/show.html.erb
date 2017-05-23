@@ -20,5 +20,10 @@
   <%= @feed.url %>
 </p>
 
+<p>
+  <strong>Hide in 'All' listing?</strong>
+  <%= @feed.hide_in_all ? "Yes" : "No" %>
+</p>
+
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
